@@ -1,7 +1,7 @@
 // localhost:3000/230803
 import { useState } from "react";
 
-import Btn from "@/components/btn";
+import Btn from "@/components/example/btn";
 
 export default function Test1() {
   const [count, setCount] = useState(0);
