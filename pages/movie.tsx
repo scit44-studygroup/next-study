@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 
+import axios from "axios";
+
 export interface Movie {
 	page: number;
 	results: Result[];
@@ -36,8 +38,9 @@ const Movie = () => {
 	const [movies, setMovies] = useState<Movie>();
 	useEffect(() => {
 		async () => {
-			const { results } = await (await fetch(`/api/movie`)).json();
-			setMovies(results);
+			const response = await axios(`/api/movie`);
+			console.log(response);
+			setMovies(response.data);
 		};
 	}, []);
 	/* $.ajax({
